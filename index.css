@@ -1,0 +1,208 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #eee;
+    font-size: 0.8em; 
+    /*em为相对大小，相对父级0.8*/
+    /*未设置父级字体大小时，相对浏览器默认字体大小的0.8（自动适配）*/
+    font-family: "PingFang SC", "Helvetica Neue", STHeiti , "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+    /*按顺序选择字体，用户设备上没有前者时使用下一个*/
+    /*font-family: "Comic Sans MS", cursive, sans-serif;*/
+    color: #2b3f55;
+}
+
+li{
+    list-style: none;
+}
+
+.header{
+    background-color: ivory;
+}
+
+a{
+    text-decoration: none;
+    color: #2b3f55;
+}
+
+/*==页面大小设置===================================================================*/
+.introduction, .info, .projects, .container>h2, footer{
+    width: 800px;
+    margin: 0 auto;
+}
+
+/*==introduction===================================================================*/
+.introduction{
+    padding: 80px 0;
+}
+
+.introduction h1{
+    font-weight: bolder;  /*设置字体粗细，正常为400。不是所有字体都有得选择*/
+}
+
+.introduction p{    
+    margin: 10px 0;
+}
+
+.introduction .links{
+    margin-top: 40px;
+}
+.links img{
+    margin-right: 20px;
+    width: 20px;
+    opacity: 0.7;
+}
+
+.links img:hover{
+    opacity: 1;   /*鼠标悬停时改变透明度*/
+}
+
+
+/*==info===========================================================================*/
+.info{
+    display: flex;
+    padding: 50px 0;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.info li{
+    margin: 20px 0;
+}
+
+.info h2{
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.info img{
+    width: 20px;
+    vertical-align: middle; /*垂直居中*/
+    margin-right: 5px;
+}
+
+
+/*==projects=======================================================================*/
+.projects{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    
+}
+
+.project{
+    width: 350px;
+    background-color: #fff;
+    border-radius: 6px;
+    margin: 30px 0;
+    padding: 15px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);    
+    /*水平偏移 垂直偏移 模糊 （尺寸） 颜色 （inset）*/
+    /*颜色可带透明（rgba）*/
+}
+
+.project h3{
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.project p{
+    margin: 10px 0;
+    line-height: 1.4em; /*行高*/
+    font-weight: lighter;
+}
+
+.project span{
+    font-weight: lighter;
+    color: brown;
+    margin-right: 15px;
+}
+
+.project img{
+    width: 100%;    /*自动适应*/
+}
+
+.project a:hover{
+    color: #ea4c89;
+}
+
+.container > h2{
+    margin: 10px auto;
+}
+
+/*==页脚===========================================================================*/
+
+footer{
+    margin: 20px auto;
+    text-align: center;
+    color: #aaabab;
+}
+
+/*==背景动画=======================================================================*/
+.background-animation1{
+    position: absolute; /*绝对定位，无视其他规定*/
+    opacity: 0.7;
+    animation-name: float1;  /*应用的动画名*/
+    animation-duration: 60s;    /*动画持续时间*/
+    animation-iteration-count: infinite;    /*动画重复次数*/
+    animation-timing-function: ease-in-out; /*动画运动方式（缓入缓出）*/
+}
+
+@keyframes float1{
+    0% {transform: translate(-100px, 100px) rotate(0);}
+    25% {transform: translate(400px, 370px) rotate(360deg);}
+    50% {transform: translate(1600px, 200px) rotate(720deg);}
+    75% {transform: translate(600px, -50px) rotate(360deg);}
+    100% {transform: translate(-50px, 100px) rotate(0deg);}
+}
+
+.background-animation2{
+    position: absolute; /*绝对定位，无视其他规定*/
+    opacity: 0.7;
+    animation-name: float2;  /*应用的动画名*/
+    animation-duration: 50s;    /*动画持续时间*/
+    animation-iteration-count: infinite;    /*动画重复次数*/
+    animation-timing-function: ease-in-out; /*动画运动方式（缓入缓出）*/
+}
+
+
+@keyframes float2{
+    0% {transform: translate(600px, -25px) rotate(0);}
+    50% {transform: translate(200px, 370px) rotate(270deg);}
+    100% {transform: translate(-50px, 100px) rotate(-90deg);}
+}
+
+.background-animation3{
+    position: absolute; /*绝对定位，无视其他规定*/
+    opacity: 0.7;
+    animation-name: float3;  /*应用的动画名*/
+    animation-duration: 80s;    /*动画持续时间*/
+    animation-iteration-count: infinite;    /*动画重复次数*/
+    animation-timing-function: ease-in-out; /*动画运动方式（缓入缓出）*/
+}
+
+
+@keyframes float3{
+    0% {transform: translate(700px, -20px) rotate(0);}
+    50% {transform: translate(500px, 370px) rotate(0);}
+    100% {transform: translate(100px, -25px) rotate(720deg);}
+}
+
+/*==媒体查询=======================================================================*/
+@media screen and (max-width: 700px){   /*没有分号！！！*/
+   /*宽度按照需求设定*/
+    .introduction, .info, .projects, .container>h2, footer{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .info > div{
+        width: 100%;
+    }
+}
+
+
+
